@@ -3,7 +3,7 @@
 import {TICK} from '../constants/ActionTypes';
 import {store} from '../containers/App'
 
-const MINUTE_MS = 60 * 1000;
+const TICK_PERIOD = 60 * 1000;
 let tickId;
 
 function dispatchTick(time = Date.now()) {
@@ -16,8 +16,8 @@ function dispatchTick(time = Date.now()) {
 
 export function setTick() {
   const currentTime = Date.now();
-  const currentMinute = currentTime - (currentTime % MINUTE_MS);
-  const delta = (currentMinute + MINUTE_MS) - currentTime;
+  const currentMinute = currentTime - (currentTime % TICK_PERIOD);
+  const delta = (currentMinute + TICK_PERIOD) - currentTime;
   tickId = setTimeout(dispatchTick, delta);
 }
 
