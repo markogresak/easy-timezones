@@ -1,17 +1,13 @@
 /* @Flow */
 
 import {TICK} from '../constants/ActionTypes';
+import {store} from '../containers/App'
 
 const MINUTE_MS = 60 * 1000;
 let tickId;
-let dispatch = () => {};
-
-export function initDispatch(propsDispatch) {
-  dispatch = propsDispatch;
-}
 
 function dispatchTick(time) {
-  dispatch({
+  store.dispatch({
     type: TICK,
     time
   });
@@ -30,5 +26,3 @@ export function unsetTick() {
     clearTimeout(tickId);
   }
 }
-
-window.dispatchTick = dispatchTick

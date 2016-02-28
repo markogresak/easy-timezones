@@ -6,7 +6,7 @@ import configureStore from '../store/configureStore';
 import Home from './Home';
 import renderDevTools from '../utils/devTools';
 
-const store = configureStore();
+export const store = configureStore();
 
 export default React.createClass({
   render() {

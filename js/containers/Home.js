@@ -11,7 +11,6 @@ import TimezoneTable from '../containers/TimezoneTable';
 class Home extends Component {
   constructor(props) {
     super(props);
-    TimezoneTick.initDispatch(this.props.dispatch);
     TimezoneTick.setTick();
   }
 
