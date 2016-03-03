@@ -5,7 +5,7 @@ import moment from 'moment-timezone';
 import styles from '../../css/app.scss';
 
 moment.locale(navigator.language);
-const MOMENT_TIME_FORMAT = 'LT';
+const MOMENT_TIME_FORMAT = 'LTS';
 
 export default class TimezoneRow extends Component {
   timezoneFormattedTime({timezoneString, date = Date.now()}) {
